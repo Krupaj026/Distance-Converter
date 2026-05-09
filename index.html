@@ -13,6 +13,8 @@
 	<!--/ /-------- My Styles --------/ /-->
 	<link href="styles.css" rel="stylesheet">
 
+	<script src="script.js" defer></script>
+
 </head>
 
 <body>
@@ -35,51 +37,6 @@
     
     <p id="directions">Press the "K" key to switch to kilometer converstion, press the "M" key to switch to mile conversion</p>
 
-	<script>
-		var converttype="miles";
-		var heading=document.querySelector("h1");
-		var intro=document.querySelector("p");
-		var answer=document.querySelector("h2");
-		var myform=document.getElementById("convert");
-
-		document.addEventListener("keydown",function(event){
-
-			if(event.key=="k"||event.key=="K")
-			{
-				converttype="Kilometers";
-				heading.innerHTML="Kilometers to  Miles Converter";
-				intro.innerHTML="Type in a number of Kilometers and click the button to convert the distance to Miles.";
-
-			}else if(event.key=="m"||event.key=="M"){
-
-				converttype="Miles";
-				heading.innerHTML="Miles to Kilometers Converter";
-				intro.innerHTML="Type in a number of  Miles and click the button to convert the distance to Kilometers.";
-
-			}
-		});
-
-		myform.addEventListener("submit",function(event){
-
-				event.preventDefault();
-				var distance=parseFloat(document.getElementById("distance").value);
-
-				if(!isNaN(distance))
-				{
-					if(converttype=="Miles")
-					{
-						var conversion=(distance*1.609344).toFixed(3);
-						answer.innerHTML=`${distance} Miles is converted to ${conversion} Kilometers`;
-						answer.style.color="#5E548E";
-					}else{
-						var conversion=(distance*0.621371192).toFixed(3);
-						answer.innerHTML=`${distance} Kilometers is converted to ${conversion} Miles`;
-						answer.style.color="#5E548E";
-					}
-				}else{
-					answer.innerHTML="Please Enter A Valid Number";
-				}
-		});
-	</script>
+	
 </body>
 </html>
