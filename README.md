@@ -35,4 +35,4 @@ git clone https://github.com/Krupaj026/Distance-Converter.git
 
 ## 🌸 Author
 
-Created by Krupa ✨
+Created by PixelSerenade ✨
